@@ -1,0 +1,75 @@
+>>  Source Program statements with value of LC indicated
+
+0               start   0                                
+0               +STCH   STRING,X                         
+4      SPCE     BYTE    C' '                             
+5               RMO     X,A                              
+7               ADD     #1                               
+a               RMO     A,X                              
+c               COMPR   A,X          ggggggggggbbbbbbbbbbbgggggggggggggggggggggggggggggggggggggg
+e               JEQ     RLOOP' '     com' dsd 'd         
+11     READ     TD      INDEV                            
+14              JEQ     READ                             
+17              LDA     #0                               
+1a              RD      INDEV                            
+1d              RSUB                                     
+20     PREP     RMO     X,S                              
+22              LDX     #0                               
+25     LAST     COMPR   X,S                              
+27              JEQ     NULL                             
+2a              JSUB    CAPS                             
+2d              JSUB    PRINT                            
+30              LDA     #1                               
+33              ADDR    A,X                              
+35              LDA     #0                               
+38              COMP    #0                               
+3b              JEQ     LAST                             
+3e     CAPS     LDCH    STRING,X                         
+41              COMP    #96                              
+44              JGT     CHECK1                           
+47              RSUB                                     
+4a     CHECK1   LDCH    STRING,X                         
+4d              COMP    #123                             
+50              JLT     CHECK2                           
+53              RSUB                                     
+56     CHECK2   LDCH    STRING,X                         
+59              SUB     #32                              
+5c              STCH    STRING,X                         
+5f              RSUB                                     
+62     PRINT    TD      OUTDEV                           
+65              JEQ     PRINT                            
+68              LDCH    STRING,X                         
+6b              WD      OUTDEV                           
+6e              RSUB                                     
+71     NULL     TD      OUTDEV                           
+74              JEQ     NULL                             
+77              LDCH    #0                               
+7a              WD      OUTDEV                           
+7d     END      J       *                                
+80     INDEV    BYTE    X'F3'                            
+82     OUTDEV   BYTE    X'05'                            
+84     STRING   RESB    100                              
+e8              END                                      
+
+>>    e n d    o f   p a s s   1 
+
+>>   *****************************************************
+>>    s y m b o l     t a b l e   (values in hexadecimal)
+
+       name           value   
+       ----------------------------
+       SPCE           4       
+       READ           11      
+       PREP           20      
+       LAST           25      
+       CAPS           3e      
+       CHECK1         4a      
+       CHECK2         56      
+       PRINT          62      
+       NULL           71      
+       END            7d      
+       INDEV          80      
+       OUTDEV         82      
+       STRING         84      
+>>   *****************************************************
+Program length: 232

@@ -1,0 +1,60 @@
+Checking operands in SIC/XE:
+
+1- Start Label has a minimum length of 6 spaces added in object file to complete the minimum length (Write in object file) "Ahmed"
+
+2- Address bigger than 2^20 byte is out of memory range in SIC/XE (1 MB) (While generating object code) "Amr"
+
+3- We will add a new column in the symbol table (Absolute/relocatable) (Pass one)"Mina"
+
+4- Each format from the 4 formats has a maximum operand size, which needs to be verified. (While generating object code)"Amr"
+
+5- Operand handling: infix notation with spaces. Supported operators are
+        +, -, *, /. The notation can have braces ( ).  (read file) "Amr"
+
+6- For EQU and ORG instructions,
+        any label in the operand must exist previously in the symbol table, else
+        it would require three passes for the assembler.   (Pass one)"Ahmed"
+
+7- LDA and similar LD instructions can take expressions.
+        EXAMPLE: 	000003 al       word    10                                               
+			000006 ko       word    2                                                
+			000009          lda     al+5
+			-------
+			reloc   n=1 i=1 x=0   b=0 p=0 e=0
+			000009 030008          lda   al+5
+	also evaluating the infix expression (evaluation of infix) "this method 
+		1-evaluates infix 
+		2-returns also the type of result (relocatable or Absolute) 
+		3-returrns true if evaluated correctly, or false if error happend " "Ahmed"
+
+8- Finding object code: In the appendix, there are object codes for every instruction.
+          we will have to edit it (generating object code) "Amr"
+
+9- We need to edit the "BYTE" directive in case of hexadecimal operand; every
+          2 hex characters are to be inserted in 1 byte, if characters are odd (11)
+          then we will reserve 6 bytes.   (Pass one)"Mina"
+
+10- the only directives that make object code(Byte , Word). their object code should be generated in pass 2 . "Mina"
+
+11- We need a method that checks the object code size and possibility to embed it in
+          the record. Parameters sent are LOC, format and starting address.
+          There should be a special handling for RESW and RESB (new record
+          in the object code file)   (To be called in pass two)"Ahmed"
+
+12- Cases when operand is false:  (in evaluate infix 'sub of 7') "Ahmed"
+          Operand doesn't exist in symbol table
+          2 operators perceed each other (alpha + + beta)
+	*note: the expression can contain (# or @) only once in the start of expression 
+	*note: the expression can contain (,X) only once in the end of expression 
+
+13- Required: checking operand for Indirect, immediate and indexed addressing.  (Generating object code)
+****Note : indexing only sets the index flag "Amr"
+
+14- Required: Making pass two structure."Mina"
+
+15- Required: Method to write the intermediate file and a method to write the object file"Ahmed"
+
+16- IMPORTANT-> Discussing and supporting Literals
+
+17- IMPORTANT-> Discussing and supporting Control Sections
+

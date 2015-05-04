@@ -1,0 +1,43 @@
+f  0       .       ..     ...                ..     
+t  0       PROG      start    0                                 
+t  0       FIRST     LDA      #0                                
+t  3                 LDT      #3                                
+t  6                 LDS      @LBL3                             
+t  9                 ADDR     T,A                               
+t  B                 LDX      #0                                
+t  E                 J        LOOP                              
+f  11      .Text record should be broken here!      
+t  11      BUF       RESW     10                                
+t  2F      LOOP      STA      BUF,X                             
+t  32                ADDR     T,X                               
+t  34                COMPR    X,S                               
+t  36                JLT      LOOP                              
+t  39                JSUB     FUN                               
+f  3C      .No object code and no text record break         
+t  3C      TEMP      EQU      FIRST                             
+t  3C      TEN       EQU      10                                
+f  3C      .(60)dec = (3A)hex. Text record not broken
+t  3C      SIXTY     +LDA     6*TEN/5+TEN-4*3                      
+f  40      .(12)dec = (C)hex                        
+t  40      TWELVE    +LDA     TEN+2*8-5/4                       
+t  44                J        *                                 
+f  47      ......... this is a function ..........  
+f  47      .end                                     
+t  47      FUN       LDB      30                                
+f  4A      .Modification record here                
+t  4A                +LDA     BUF                               
+f  4E      .Modification record here                
+t  4E                +LDT     30                                
+f  52      .this is an inline comment               
+t  52                RSUB                   1000                
+f  55      ............. Rest of Data ..............
+t  55      TEMP1     BYTE     X'ABCDEF'                         
+t  58      TEMP2     BYTE     C'ABCDEF'                         
+t  5E      LBL1      WORD     7                                 
+f  61      .ORG statment                            
+t  61                ORG      LBL1                              
+t  5E      LBL1BKUP  RESW     1                                 
+t  61      LBL2      WORD     30                                
+t  64      LBL3      WORD     60                                
+t  67      BUF2      RESB     12                                
+t  73                END      FIRST                             

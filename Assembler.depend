@@ -1,0 +1,184 @@
+# depslib dependency file v1.0
+1400176244 source:d:\code blocks programs\assembler\instruction.cpp
+	<string>
+	"Instruction.h"
+
+1400176240 d:\code blocks programs\assembler\instruction.h
+	<iostream>
+
+1400186253 source:d:\code blocks programs\assembler\main.cpp
+	<iostream>
+	<string.h>
+	<locale>
+	<cstdlib>
+	<fstream>
+	"Instruction.h"
+
+1400185767 d:\code blocks programs\assembler\regex.h
+	<stddef.h>
+	<regex.h>
+
+1400200463 source:c:\users\amr\desktop\assembler\main.cpp
+	<iostream>
+	<string.h>
+	<locale>
+	<cstdlib>
+	<fstream>
+	<string>
+	<sstream>
+	<stdio.h>
+	"Instruction.h"
+
+1400176240 c:\users\amr\desktop\assembler\instruction.h
+	<iostream>
+
+1400176244 source:c:\users\amr\desktop\assembler\instruction.cpp
+	<string>
+	"Instruction.h"
+
+1400200084 source:c:\amr\codeblocksworkspace\assembler\instruction.cpp
+	<string>
+	"Instruction.h"
+
+1400176239 c:\amr\codeblocksworkspace\assembler\instruction.h
+	<iostream>
+
+1401628689 source:c:\amr\codeblocksworkspace\assembler\main.cpp
+	<iostream>
+	<string.h>
+	<locale>
+	<cstdlib>
+	<fstream>
+	<stdlib.h>
+	<string>
+	<sstream>
+	<stdio.h>
+	"Instruction.h"
+	"passTwoInstruction.h"
+	"StackS.h"
+	"StackF.h"
+	"IntermediateObject.h"
+
+1401581764 source:c:\amr\codeblocksworkspace\assembler pass1\main.cpp
+	<iostream>
+	<string.h>
+	<locale>
+	<cstdlib>
+	<fstream>
+	<stdlib.h>
+	<string>
+	<sstream>
+	<stdio.h>
+	"Instruction.h"
+	"passTwoInstruction.h"
+	"StackS.h"
+	"StackF.h"
+	"IntermediateObject.h"
+
+1400176239 c:\amr\codeblocksworkspace\assembler pass1\instruction.h
+	<iostream>
+
+1400200084 source:c:\amr\codeblocksworkspace\assembler pass1\instruction.cpp
+	<string>
+	"Instruction.h"
+
+1367221813 source:c:\amr\codeblocksworkspace\assembler pass1\stackf.cpp
+	<iostream>
+	<stdio.h>
+	"StackF.h"
+
+1367221524 c:\amr\codeblocksworkspace\assembler pass1\stackf.h
+	"FloatNode.h"
+
+1367221363 c:\amr\codeblocksworkspace\assembler pass1\floatnode.h
+
+1367216764 source:c:\amr\codeblocksworkspace\assembler pass1\stacks.cpp
+	<iostream>
+	<stdio.h>
+	"StackS.h"
+	<string.h>
+	<iostream>
+
+1367216742 c:\amr\codeblocksworkspace\assembler pass1\stacks.h
+	<string.h>
+	"StringNode.h"
+	<iostream>
+
+1367216402 c:\amr\codeblocksworkspace\assembler pass1\stringnode.h
+	<string.h>
+	<iostream>
+
+1367216404 source:c:\amr\codeblocksworkspace\assembler pass1\stringnode.cpp
+	<stdio.h>
+	"StringNode.h"
+	<string.h>
+	<iostream>
+
+1367221437 source:c:\amr\codeblocksworkspace\assembler pass1\floatnode.cpp
+	<stdio.h>
+	"floatnode.h"
+
+1401226244 source:c:\amr\codeblocksworkspace\assembler pass1\intermediateobject.cpp
+	"IntermediateObject.h"
+	<string>
+
+1401226243 c:\amr\codeblocksworkspace\assembler pass1\intermediateobject.h
+	<string>
+
+1401233947 c:\amr\codeblocksworkspace\assembler pass1\passtwoinstruction.h
+	<string>
+
+1401239556 source:c:\amr\codeblocksworkspace\assembler pass1\passtwoinstruction.cpp
+	"passTwoInstruction.h"
+	<string>
+
+1401226244 source:c:\amr\codeblocksworkspace\assembler\intermediateobject.cpp
+	"IntermediateObject.h"
+	<string>
+
+1401226243 c:\amr\codeblocksworkspace\assembler\intermediateobject.h
+	<string>
+
+1367221813 source:c:\amr\codeblocksworkspace\assembler\stackf.cpp
+	<iostream>
+	<stdio.h>
+	"StackF.h"
+
+1367221524 c:\amr\codeblocksworkspace\assembler\stackf.h
+	"FloatNode.h"
+
+1367221363 c:\amr\codeblocksworkspace\assembler\floatnode.h
+
+1367216764 source:c:\amr\codeblocksworkspace\assembler\stacks.cpp
+	<iostream>
+	<stdio.h>
+	"StackS.h"
+	<string.h>
+	<iostream>
+
+1367216742 c:\amr\codeblocksworkspace\assembler\stacks.h
+	<string.h>
+	"StringNode.h"
+	<iostream>
+
+1367216402 c:\amr\codeblocksworkspace\assembler\stringnode.h
+	<string.h>
+	<iostream>
+
+1367216404 source:c:\amr\codeblocksworkspace\assembler\stringnode.cpp
+	<stdio.h>
+	"StringNode.h"
+	<string.h>
+	<iostream>
+
+1401239556 source:c:\amr\codeblocksworkspace\assembler\passtwoinstruction.cpp
+	"passTwoInstruction.h"
+	<string>
+
+1401233947 c:\amr\codeblocksworkspace\assembler\passtwoinstruction.h
+	<string>
+
+1367221437 source:c:\amr\codeblocksworkspace\assembler\floatnode.cpp
+	<stdio.h>
+	"floatnode.h"
+

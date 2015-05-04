@@ -1,0 +1,120 @@
+>>  Source Program statements with value of LC indicated
+
+.       ..     ...                ..
+0      PROG     start   0                                
+0      FIRST    LDA     #0                               
+3               LDT     #3                               
+6               LDS     @LBL3                            
+9               ADDR    T,A                              
+B               LDX     #0                               
+E               J       LOOP                             
+      .Text record should be broken here!      
+11     BUF      RESW    10                               
+2F     LOOP     STA     BUF,X                            
+32              ADDR    T,X                              
+34              COMPR   X,S                              
+36              JLT     LOOP                             
+39              JSUB    FUN                              
+      .No object code and no text record break         
+3C     TEMP     EQU     FIRST                            
+3C     TEN      EQU     10                               
+      .(60)dec = (3A)hex. Text record not broken
+3C     SIXTY    +LDA    6*TEN/5+TEN-4*3                     
+      .(12)dec = (C)hex                        
+40     TWELVE   +LDA    TEN+2*8-5/4                      
+44              J       *                                
+      ......... this is a function ..........  
+      .end                                     
+47     FUN      LDB     30                               
+      .Modification record here                
+4A              +LDA    BUF                              
+      .Modification record here                
+4E              +LDT    30                               
+      .this is an inline comment               
+52              RSUB                 1000                
+      ............. Rest of Data ..............
+55     TEMP1    BYTE    X'ABCDEF'                        
+58     TEMP2    BYTE    C'ABCDEF'                        
+5E     LBL1     WORD    7                                
+      .ORG statment                            
+61              ORG     LBL1                             
+5E     LBL1BKUP RESW    1                                
+61     LBL2     WORD    30                               
+64     LBL3     WORD    60                               
+67     BUF2     RESB    12                               
+73              END     FIRST                            
+
+>>    e n d    o f   p a s s   1 
+
+>>   ********************************************************
+>>    s y m b o l     t a b l e   (values in hexadecimal)
+
+       name           value    Absol/Reloc
+       ----------------------------------------
+       FIRST          0        Relocatable 
+       BUF            11       Relocatable 
+       LOOP           2f       Relocatable 
+       TEMP           0        Relocatable 
+       TEN            a        Absolute    
+       SIXTY          3c       Relocatable 
+       TWELVE         40       Relocatable 
+       FUN            47       Relocatable 
+       TEMP1          55       Relocatable 
+       TEMP2          58       Relocatable 
+       LBL1           5e       Relocatable 
+       LBL1BKUP       5e       Relocatable 
+       LBL2           61       Relocatable 
+       LBL3           64       Relocatable 
+       BUF2           67       Relocatable 
+>>   ********************************************************
+>>   S t a r t   o f    P a s s   I I 
+
+>>   A s s e m b l e d    p r o g r a m     l i s t i n g
+
+LC     Code     Source   Statement
+
+
+.       ..     ...                ..     
+0               PROG     start   0                                
+0      010000   FIRST    LDA     #0                               
+3      750003            LDT     #3                               
+6      6e205b            LDS     @LBL3                            
+9      009050            ADDR    T,A                              
+B      050000            LDX     #0                               
+E      3f201e            J       LOOP                             
+              .Text record should be broken here!      
+11              BUF      RESW    10                               
+2F     0fafdf   LOOP     STA     BUF,X                            
+32     009051            ADDR    T,X                              
+34     00A014            COMPR   X,S                              
+36     3b2ff6            JLT     LOOP                             
+39     4b200b            JSUB    FUN                              
+              .No object code and no text record break         
+3C              TEMP     EQU     FIRST                            
+3C              TEN      EQU     10                               
+              .(60)dec = (3A)hex. Text record not broken
+3C     0310000a SIXTY    +LDA    6*TEN/5+TEN-4*3                     
+              .(12)dec = (C)hex                        
+40     03100019 TWELVE   +LDA    TEN+2*8-5/4                      
+44     3f2ffd            J       *                                
+              ......... this is a function ..........  
+              .end                                     
+47     6b2fd4   FUN      LDB     30                               
+              .Modification record here                
+4A     03100011          +LDA    BUF                              
+              .Modification record here                
+4E     7710001e          +LDT    30                               
+              .this is an inline comment               
+52     4f0000            RSUB                 1000                
+              ............. Rest of Data ..............
+55     ABCDEF   TEMP1    BYTE    X'ABCDEF'                        
+58     414243444546 TEMP2    BYTE    C'ABCDEF'                        
+5E     000007   LBL1     WORD    7                                
+              .ORG statment                            
+61                       ORG     LBL1                             
+5E              LBL1BKUP RESW    1                                
+61     00001e   LBL2     WORD    30                               
+64     00003c   LBL3     WORD    60                               
+67              BUF2     RESB    12                               
+73                       END     FIRST                            
+Successful assembly

@@ -1,0 +1,50 @@
+     start 0
+         +STCH    STRING , X
+SPCE                 BYTE                C' '
+         RMO     X,A
+         ADD     #1
+         RMO     A,X
+         COMPR   A,X       ggggggggggbbbbbbbbbbbgggggggggggggggggggggggggggggggggggggg
+         JEQ     RLOOP' '  com' dsd 'd d dsdvsd' 
+READ     TD      INDEV
+         JEQ     READ
+         LDA     #0
+         RD      INDEV
+         RSUB
+PREP     RMO     X,S
+         LDX     #0
+LAST     COMPR   X,S
+         JEQ     NULL
+         JSUB    CAPS
+         JSUB    PRINT
+         LDA     #1
+         ADDR    A,X
+         LDA     #0
+         COMP    #0
+         JEQ     LAST
+CAPS     LDCH    STRING,X
+         COMP    #96
+         JGT     CHECK1
+         RSUB
+CHECK1   LDCH    STRING,X
+         COMP    #123
+         JLT     CHECK2
+         RSUB
+CHECK2   LDCH    STRING,X
+         SUB     #32
+         STCH    STRING,X
+         RSUB
+PRINT    TD      OUTDEV
+         JEQ     PRINT
+         LDCH    STRING,X
+         WD      OUTDEV
+         RSUB
+NULL     TD      OUTDEV
+         JEQ     NULL
+         LDCH    #0
+         WD      OUTDEV
+END      J       *
+INDEV    BYTE    X'F3'
+OUTDEV   BYTE    X'05'
+STRING   RESB    100
+         END
